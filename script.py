@@ -201,10 +201,17 @@
 # list_id_after = id(shopping_center[-1])
 #
 # print( list_id_after == list_id_before )
-per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
-money = int(input("Сумма: "))
-# Возможности языка позволяют выполнить определённые действия для каждого элемента списка map(function, list)
-deposit = list(map(int, list(map((money/100).__mul__, per_cent.values()))))
-# deposit = [int(i * money / 100) for i in per_cent.values()] # Это в следующем модуле
-i = deposit.index(max(deposit))
-print(deposit[i])
+# per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
+# money = int(input("Сумма: "))
+# # Возможности языка позволяют выполнить определённые действия для каждого элемента списка map(function, list)
+# deposit = list(map(int, list(map((money/100).__mul__, per_cent.values()))))
+# # deposit = [int(i * money / 100) for i in per_cent.values()] # Это в следующем модуле
+# i = deposit.index(max(deposit))
+# print(deposit[i])
+
+
+x = input('year: ')
+def is_leap_year(x):
+    return (x % 400 == 0) or (( x % 4 == 0) and ( x % 100 != 0))
+print(is_leap_year(x = 2000))
+
