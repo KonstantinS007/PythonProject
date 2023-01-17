@@ -139,6 +139,11 @@
 #
 # print(len(c))
 #
+### github
+### commit
+### time
+### back of future
+### izi
 # # [1,2,3]
 # abons = {"Иванов", "Петров", "Васильев", "Антонов"}
 #
