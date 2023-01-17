@@ -208,10 +208,8 @@
 # # deposit = [int(i * money / 100) for i in per_cent.values()] # Это в следующем модуле
 # i = deposit.index(max(deposit))
 # print(deposit[i])
-
-
-x = input('year: ')
-def is_leap_year(x):
-    return (x % 400 == 0) or (( x % 4 == 0) and ( x % 100 != 0))
-print(is_leap_year(x = 2000))
+# x = input('year: ')
+# def is_leap_year(x):
+#     return (x % 400 == 0) or (( x % 4 == 0) and ( x % 100 != 0))
+# print(is_leap_year(x = 2000))
 
