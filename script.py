@@ -217,4 +217,24 @@
 # def is_leap_year(x):
 #     return (x % 400 == 0) or (( x % 4 == 0) and ( x % 100 != 0))
 # print(is_leap_year(x = 2000))
-
+# a = [1, 2, 3]
+# print(id(a))  # id возвращает идентификатор объекта
+# # 140039772293512
+#
+# b = a
+# print(id(b))
+# # 140039772293512
+#
+# print(a is b)  # а и b являются один и тем же объектом
+# # True
+# a = [1, 2, 3]
+# b = [1, 2, 3]
+#
+# print(a == b)  # True
+# print(a is b)  # False
+# a= None
+# # Хорошо
+# print('is', a is None)
+#
+# # Плохо
+# print('==', a == None)
