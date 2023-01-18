@@ -238,9 +238,42 @@
 #
 # # Плохо
 # print('==', a == None)
-is_rainy = True  # дождь будет
+# is_rainy = True  # дождь будет
+#
+# if is_rainy:
+#     print("Брать зонт")
+# else:
+#     print("Не брать зонт")
+# mx = 0
+# s = 0
+# x = int(input())
+# if x < 0:
+#     s = x
+#
+# b = 7
+# b /= b
+#
+# if x > mx
+#     mx = x
+#
+# print(s)
+# print(mx)
+# is_rainy = True  # дождь будет
+# heavy_rain = False  # не сильный дождь
+#
+# if is_rainy:
+#     # в данный блок дописали ещё один условный оператор
+#     if heavy_rain:
+#         print("Брать зонт")
+#     else:
+#         print("Надеть дождевик")
+# else:
+#     print("Не брать зонт")
+print(bool(0))  # False
+print(bool(1))  # True
 
-if is_rainy:
-    print("Брать зонт")
-else:
-    print("Не брать зонт")
+print(bool("")) # False
+print(bool("1"))  # True
+
+print(bool([])) # False
+print(bool([1]))  # True
