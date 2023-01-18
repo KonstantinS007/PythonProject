@@ -238,3 +238,9 @@
 #
 # # Плохо
 # print('==', a == None)
+is_rainy = True  # дождь будет
+
+if is_rainy:
+    print("Брать зонт")
+else:
+    print("Не брать зонт")
