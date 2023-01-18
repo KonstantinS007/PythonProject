@@ -269,11 +269,37 @@
 #         print("Надеть дождевик")
 # else:
 #     print("Не брать зонт")
-print(bool(0))  # False
-print(bool(1))  # True
+# print(bool(0))  # False
+# print(bool(1))  # True
+#
+# print(bool("")) # False
+# print(bool("1"))  # True
+#
+# print(bool([])) # False
+# print(bool([1]))  # True
+# Плохо
+# zero = 0
+# if zero != 0:
+#    print(10 / zero)
+# else:
+#    print("Делить на ноль нельзя")
+#
+# # Хорошо
+# if zero:
+#    print(10 / zero)
+# else:
+#    print("Делить на ноль нельзя")
 
-print(bool("")) # False
-print(bool("1"))  # True
+# password = input()
+# # Плохо
+# if password == "":
+#    print("Вы забыли ввести пароль")
+#
+# # Очень плохо
+# if len(password) == 0:
+#    print("Вы забыли ввести пароль")
+#
+# # Хорошо
+# if not password:
+#    print("Вы забыли ввести пароль")
 
-print(bool([])) # False
-print(bool([1]))  # True
