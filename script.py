@@ -303,3 +303,163 @@
 # if not password:
 #    print("Вы забыли ввести пароль")
 
+#13.2. Практические примеры с различными операторами
+# print(list(str(123456789)))
+# # ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+# print(list(map(int, ['1', '2', '3', '4', '5', '6', '7', '8', '9'])))
+# # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# list_digit = list(map(int, list(str(123456789))))
+# print(5 in list_digit)
+# # True
+# print('5' in str(123456789))
+# # True
+# n = input()
+# print('3' in str(n) and '7' in str(n))
+# # True
+
+#13.4 Исключения
+# print("Перед исключением")
+# I = 1 / 0 # Здесь что-то не так….
+# print("После исключения")
+# print("Перед исключением")
+# # теперь пользователь сам вводит числа для деления
+# a = int(input("a: "))
+# b = int(input("b: "))
+# c = a / b # здесь может возникнуть исключение деления на ноль
+# print(c) # печатаем c = a / b если всё хорошо
+# print(e) # Выводим информацию об ошибке
+# print("После исключения")
+# try:  # Добавляем конструкцию try-except для отлова нашей ошибки
+#     print("Перед исключением")
+#     # теперь пользователь сам вводит числа для деления
+#     a = int(input("a: "))
+#     b = int(input("b: "))
+#     c = a / b  # здесь может возникнуть исключение деления на ноль
+#     print(c)  # печатаем c = a / b если всё хорошо
+# except ZeroDivisionError as e:  # Добавляем тип именно той ошибки которую хотим отловить.
+#     print(e)  # Выводим информацию об ошибке
+#     print("После исключения")
+#
+# print("После После исключения")
+# try:
+#     print("Перед исключением")
+#     a = int(input("a: "))
+#     b = int(input("b: "))
+#     c = a / b
+#     print(c)  # печатаем c = a / b, если всё хорошо
+# except ZeroDivisionError as e:
+#     print("После исключения")
+# else:  # код в блоке else выполняется только в том случае, если код в блоке try выполнился успешно (т.е. не вылетело никакого исключения).
+#     print("Всё ништяк")
+# finally:  # код в блоке finally выполнится в любом случае при выходе из try-except
+#     print("Finally на месте")
+#
+# print("После После исключения")
+# age = int(input("How old are you?"))
+#
+# if age > 100 or age <= 0:
+#     raise ValueError("Тебе не может быть столько лет")
+#
+# print(f"Тебе {age} лет!")  # Возраст выводится только в случае, если пользователь ввёл правильный возраст.
+# try:
+#     age = int(input("How old are you?"))
+#     if age > 100 or age <= 0:
+#         raise ValueError("Тебе не может быть столько лет")
+# except ValueError as error:
+#     print(error)
+#     print("Неправильный возраст")
+# else:
+#     print(f"You are {age} years old!") # Возраст выводится только в случае, если пользователь ввёл правильный возраст.
+
+# #Задание 13.4.8
+# try:
+#     n = int(input("Введите число:"))
+# except ValueError as e:
+#     print("неверное значение")
+# else:
+#     print("Вы ввели правильное число")
+# finally:
+#     print("Выход из программы")
+
+# 13.5 Практические примеры с условным оператором
+# if A % 2 == 0:
+#     print('Число А кратно 2')
+
+# if x > 0:
+#     if y > 0:               # x > 0, y > 0
+#          print("Первая четверть")
+#     else:                   # x > 0, y < 0
+#          print("Четвертая четверть")
+# else:
+#     if y > 0:               # x < 0, y > 0
+#          print("Вторая четверть")
+#     else:                   # x < 0, y < 0
+#          print("Третья четверть")
+#
+# if x > 0 and y > 0:
+#     print("Первая четверть")
+# if x > 0 and y < 0:
+#     print("Четвертая четверть")
+# if x < 0 and y > 0:
+#     print("Вторая четверть")
+# if x < 0 and y < 0:
+#     print("Третья четверть")
+
+# month = int(input())
+#
+# if month in [3, 4, 5]:
+#     print("Весна")
+# elif month in [6, 7, 8]:
+#     print("Лето")
+# elif month in [9, 10, 11]:
+#     print("Осень")
+# elif month in [12, 1, 2]:
+#     print("Зима")
+
+# user_database = {
+#     'user': 'password',
+#     'iseedeadpeople': 'greedisgood',
+#     'hesoyam': 'tgm'
+# }
+# # username = 'user'
+# # password = 'password'
+# username = 'user1'
+# password = '0123'
+# u = username
+# p = password
+# def check_user(username, password):
+#     if username in user_database:
+#         if password == user_database[username]:
+#             return True
+#         else:
+#             return False
+#     else:
+#         return False
+# print(check_user(username = u, password = p))
+
+# A = int(input('Введите первое число\n'))
+# B = int(input('Введите второе число\n'))
+# C = int(input('Введите третье число\n'))
+#
+# if ((A < 45) and (B >= 45) and (C >=45)) or \
+#     ((A >= 45) and (B < 45) and (C >=45)) or \
+#     ((A >= 45) and (B >= 45) and (C < 45)):
+#     print('Есть число меньше 45 и только одно')
+# else:
+#     print('Числа меньше 45 нет или их несколько')
+
+# A = int(input('Введите число: '))
+# if not (-10 < A < -1 or 2 < A < 10):
+#     print("True")
+# else:
+#     print("False")
+
+# A = int(input('Введите ведите двух значное число: '))
+# first_digit = A // 10
+# second_digit = A % 10
+# print(first_digit, second_digit)
+# print((first_digit == 5) or (second_digit == 5))
+
+list_ = [-5, 2, 4, 8, 12, -7, 5]
+
+print(len(list_) == len(set(list_)))
