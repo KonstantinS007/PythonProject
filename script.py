@@ -762,14 +762,26 @@ n = 3
 # print( any(L))
 
 
-B = int(input('Количество билетов: '))
-n = 0
-for i in range(1, B+1):
-    s = int(input('Возраст: ',i,'посетителя'))
-    if 18 <= s <25:
-        n += 990
-    if s >= 25:
-        n += 1390
-if B >= 3:
-    n = n - n/10
-print('Сумма к оплате: ',n,'руб.')
+# B = int(input('Количество билетов: '))
+# n = 0
+# for i in range(1, B+1):
+#     s = int(input('Возраст: '))
+#     if 18 <= s <25:
+#         n += 990
+#     if s >= 25:
+#         n += 1390
+# if B >= 3:
+#     n = n - n/10
+# print('Сумма к оплате: ',n,'руб.')
+
+# Proverka chujogo koda
+money = float(input('Ввести сумму:'))
+per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
+deposit = []
+deposit.append(money*5.6/100)
+deposit.append(money*5.9/100)
+deposit.append(money*4.28/100)
+deposit.append(money*4/100)
+print(deposit)
+
+print('Максимальная сумма, которую вы можете заработать', max(deposit))
