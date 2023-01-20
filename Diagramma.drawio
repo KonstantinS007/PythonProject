@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-01-20T15:21:04.127Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="d0E6MHgRrHP4UTOpRd8F" version="20.8.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-20T15:26:45.174Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="bmeKMTysiVs5bk-lm5Sm" version="20.8.6" type="github">
   <diagram id="0qvzraZpW9Nj4yTmkSng" name="Страница 1">
     <mxGraphModel dx="1599" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -148,6 +148,12 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-640" y="290" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="OOYXhSSwor77ZRCtlaet-1" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iAddIcon;fillColor=#7AdF78;fillColor2=#1A9917;strokeColor=#ffffff;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-690" y="300" width="15" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="OOYXhSSwor77ZRCtlaet-2" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iDir;" vertex="1" parent="1">
+          <mxGeometry x="-435" y="565" width="100" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
