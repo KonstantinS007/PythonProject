@@ -4,7 +4,9 @@ money = int(input("Сумма: "))
 
 # map(function, list) позволят выполнить определённые действия для каждого элемента списка
 # ().__mul__ умножение элементов, получения списка значений полученых накоплений в каждом банке
-deposit = list(map(int, list(map((money/100).__mul__, per_cent.values()))))
+# deposit = list(map(int, list(map((money/100).__mul__, per_cent.values()))))
+
+deposit = list(map(lambda x: int(x*money/100), per_cent.values()))
 
 # это в следующем модуле
 # deposit = [int(i * money / 100) for i in per_cent.values()]
