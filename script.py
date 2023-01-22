@@ -878,7 +878,6 @@ n = 3
 #        print(f"Символ {char} встречается {cnt} раз")
 
 
-
 # # функция, которая возводит любое число в квадрат
 # def pow_func(base):
 #    print(base ** 2)
@@ -922,13 +921,135 @@ n = 3
 # print(pow_func(3))
 # # 9
 
-def get_multipliers(a):
-   count = 0
-   for n in range(1, a + 1):
-       if a % n == 0:
-           count += 1
+# def get_multipliers(a):
+#    count = 0
+#    for n in range(1, a + 1):
+#        if a % n == 0:
+#            count += 1
+#
+#    return count
+#
+# print(get_multipliers(5))  # 2
+# print(get_multipliers(4))  # 3
 
-   return count
 
-print(get_multipliers(5))  # 2
-print(get_multipliers(4))  # 3
+# def check_palindrome(str_):
+#    str_ = str_.lower()
+#    str_ = str_.replace(" ", "")
+#
+#    if str_ == str_[::-1]:
+#        return True
+#    else:
+#        return False
+#
+# print(check_palindrome("test"))  # False
+# print(check_palindrome("Кит на море не романтик"))  # True
+
+# x = 3
+#
+#
+# def func():
+#    global x  # объявляем, что переменная является глобальной
+#    print(x)
+#    x = 5
+#    x += 5
+#    return x
+#
+# func()
+# print(x)
+
+# def get_my_func():
+#
+#     def hello_world():
+#         print("Hello")
+#
+#     return hello_world
+#
+#
+# hello_world_func = get_my_func()  # получить функцию в качестве результата
+# print(type(hello_world_func))  # <class 'function'>
+# hello_world_func()  # Hello
+
+# def get_mul_func(m):
+#     nonlocal_m = m
+#
+#     def local_mul(n):
+#         return n * nonlocal_m
+#
+#     return local_mul
+#
+#
+# two_mul = get_mul_func(2)  # возвращаем функцию, которая будет умножать числа на 2
+# print(two_mul(5))  # 5 * 2
+
+# def adder(*nums):
+#     sum_ = 0
+#     for n in nums:
+#         sum_ += n
+#
+#     return sum_
+#
+#
+# print(adder())  # 0
+# print(adder(1))  # 1
+# print(adder(1, 2))  # 3
+# print(adder(1, 2, 3))  # 6
+
+# def mul(*nums):
+#     p = 1
+#     for n in nums:
+#         p *= n
+#
+#     return p
+
+# def rec_fibb(n):
+#
+#    if n == 1:
+#        return 1
+#
+#    if n == 2:
+#       return 1
+#
+#    return rec_fibb(n - 1) + rec_fibb(n - 2)
+#
+#
+# print(rec_fibb(10))  # 55
+
+# def summ_n(n):
+#     if n == 1:
+#          return 1
+#     return n + summ_n(n - 1)
+# print(summ_n(10))
+
+# def reverse_str(string):
+#    if len(string) == 0:
+#        return ''
+#    else:
+#        return string[-1] + reverse_str(string[:-1])
+#
+# print(reverse_str('test'))  # tset
+
+# def sum_digit(n):
+#    if n < 10:
+#        return n
+#    else:
+#        return n % 10 + sum_digit(n // 10)
+#
+# print(sum_digit(123))  # 6
+
+# def count(start=1, step=1):
+#     counter = start
+#     while True:
+#         yield counter
+#         counter += step
+# print(count(5,2))
+
+# def repeat_list(list_):
+#    list_values = list_.copy()
+#    while True:
+#        value = list_values.pop(0)
+#        list_values.append(value)
+#        yield value
+#
+# for i in repeat_list([1, 2, 3]):
+#    print(i)
