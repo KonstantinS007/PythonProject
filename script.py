@@ -1053,3 +1053,278 @@ n = 3
 #
 # for i in repeat_list([1, 2, 3]):
 #    print(i)
+
+
+# def make_adder(x):
+#
+#     def adder(n):
+#         return x + n  # захват переменной "x" из nonlocal области
+#
+#     return adder  # возвращение функции в качестве результата
+#
+#
+# # функция, которая будет к любому числу прибавлять пятёрку
+# add_5 = make_adder(5)
+#
+# print(add_5(10))  # 15
+# print(add_5(100))  # 105
+
+# def my_decorator(a_function_to_decorate):
+#     # Здесь мы определяем новую функцию - «обертку». Она нам нужна, чтобы выполнять
+#     # каждый раз при вызове оригинальной функции, а не только один раз
+#     def wrapper():
+#         # здесь поместим код, который будет выполняться до вызова, потом вызов
+#         # оригинальной функции, потом код после вызова
+#         print("Я буду выполнен до основного вызова!")
+#
+#         result = a_function_to_decorate()  # не забываем вернуть значение исходной функции
+#
+#         print("Я буду выполнен после основного вызова!")
+#         return result
+#
+#     return wrapper
+#
+# def my_function():
+#    print("Я - оборачиваемая функция!")
+#    return 0
+#
+# print(my_function())
+# # Я - оборачиваемая функция!
+# # 0
+#
+# decorated_function = my_decorator(my_function)  # декорирование функции
+# print(decorated_function())
+# # Я буду выполнен до основного вызова!
+# # Я - оборачиваемая функция!
+# # Я буду выполнен после основного вызова!
+# # 0
+
+
+import time
+
+
+# def decorator_time(fn):
+#    def wrapper():
+#        print(f"Запустилась функция {fn}")
+#        t0 = time.time()
+#        result = fn()
+#        dt = time.time() - t0
+#        print(f"Функция выполнилась. Время: {dt:.10f}")
+#        return dt  # задекорированная функция будет возвращать время работы
+#    return wrapper
+#
+#
+# def pow_2():
+#    return 10000000 ** 2
+
+
+# def in_build_pow():
+#    return pow(10000000, 2)
+#
+#
+# pow_2 = decorator_time(pow_2)
+# in_build_pow = decorator_time(in_build_pow)
+#
+# pow_2()
+# # Запустилась функция <function pow_2 at 0x7f938401b158>
+# # Функция выполнилась. Время: 0.0000011921
+#
+# in_build_pow()
+# # Запустилась функция <function in_build_pow at 0x7f938401b620>
+# # Функция выполнилась. Время: 0.0000021458
+
+
+# import time
+#
+# N = 100
+#
+#
+# def decorator_time(fn):
+#    def wrapper():
+#        t0 = time.time()
+#        result = fn()
+#        dt = time.time() - t0
+#        return dt
+#    return wrapper
+#
+#
+# def pow_2():
+#    return 10000000 ** 2
+#
+#
+# def in_build_pow():
+#    return pow(10000000, 2)
+#
+#
+# pow_2 = decorator_time(pow_2)
+# in_build_pow = decorator_time(in_build_pow)
+
+# mean_pow_2 = 0
+# mean_in_build_pow = 0
+# for _ in range(N):
+#    mean_pow_2 += pow_2()
+#    mean_in_build_pow += in_build_pow()
+#
+# print(f"Функция {pow_2} выполнялась {N} раз. Среднее время: {mean_pow_2 / N:.10f}")
+# print(f"Функция {in_build_pow} выполнялась {N} раз. Среднее время: {mean_in_build_pow / 100:.10f}")
+
+
+# def my_decorator(fn):
+#    def wrapper():
+#        fn()
+#    return wrapper  # возвращается задекорированная функция, которая заменяет исходную
+#
+# # выведем незадекорированную функцию
+# def my_function():
+#    pass
+# print(my_function)  # <function my_function at 0x7f938401ba60>
+#
+# # выведем задекорированную функцию
+# @my_decorator
+# def my_function():
+#    pass
+# print(my_function)  # <function my_decorator.<locals>.wrapper at 0x7f93837059d8>
+
+
+# декоратор, в котором встроенная функция умеет принимать аргументы
+# def do_it_twice(func):
+
+#    def wrapper(*args, **kwargs):
+#        func(*args, **kwargs)
+#        func(*args, **kwargs)
+#    return wrapper
+#
+#
+# @do_it_twice
+# def say_word(word):
+#    print(word)
+#
+# say_word("Oo!!!")
+# # Oo!!!
+# # Oo!!!
+
+
+# def my_decorator(fn):
+#     print("Этот код будет выведен один раз в момент декорирования функции")
+#     def wrapper(*args, **kwargs):
+#         print('Этот код будет выполняться перед каждым вызовом функции')
+#         result = fn(*args, **kwargs)
+#         print('Этот код будет выполняться после каждого вызова функции')
+#         return result
+#     return wrapper
+
+# def counter(func):
+#    count = 0
+#    def wrapper(*args, **kwargs):
+#        nonlocal count
+#        func(*args, **kwargs)
+#        count += 1
+#        print(f"Функция {func} была вызвана {count} раз")
+#    return wrapper
+#
+# @counter
+# def say_word(word):
+#    print(word)
+#
+# say_word("Oo!!!")
+# # Oo!!!
+# # Функция <function say_word at 0x7f93836d47b8> была вызвана 1 раз
+#
+# say_word("Oo!!!")
+# # Oo!!!
+# # Функция <function say_word at 0x7f93836d47b8> была вызвана 2 раз
+
+
+# def cache(func):
+#    cache_dict = {}
+#    def wrapper(num):
+#        nonlocal cache_dict
+#        if num not in cache_dict:
+#            cache_dict[num] = func(num)
+#            print(f"Добавление результата в кэш: {cache_dict[num]}")
+#        else:
+#            print(f"Возвращение результата из кэша: {cache_dict[num]}")
+#        print(f"Кэш {cache_dict}")
+#        return cache_dict[num]
+#    return wrapper
+
+
+# def linear_solve(a, b):
+#     return b/a
+# # 2*x = 9
+# print(linear_solve(2, 9))
+# # 0*x = 1
+# print(linear_solve(0,1))
+
+
+# def linear_solve(a, b):
+#     if a:
+#         return b/a
+#     elif not a and not b: # снова используем числа в логических выражениях
+#         return "Бесконечное количество корней"
+#     else:
+#         return "Нет корней"
+#
+# print(linear_solve(0,0))
+
+
+# def diskriminant(a,b,c):
+#    def quadratic_solve(a,b,c):
+#       if diskriminant(a,b,c) < 0:
+#         return "Нет вещественных корней"
+#       elif diskriminant(a,b,c) == 0:
+#           return -b / (2 * a)
+#       else:
+#           return (-b - diskriminant(a, b, c) ** 0.5) / (2 * a), (-b + diskriminant(a, b, c) ** 0.5) / (2 * a)
+#
+# # разбили строку из input и преобразовали к float
+# # Ввод строки 1 0 -1
+# L = list(map(float, input().split()))
+# # Вывод [1.0, 0.0, -1.0]
+# # [1, 0, -1] - например
+# print(quadratic_solve(L[0], L[1], L[2]))
+# # (-1.0, 1.0)
+
+
+# def min_list(L):
+#     if len(L) == 1:
+#         return L[0]
+#     return L[0] if L[0] < min_list(L[1:]) else min_list(L[1:])
+
+# def mirror(a, res=0):
+#     if a == 0:
+#         return res
+#     else:
+#         return mirror(a // 10, res * 10 + a % 10)
+
+
+# def equal(N, S):
+#     if S < 0:
+#         return False
+#     if N < 10:
+#         return N == S
+#     else:
+#         return equal(N // 10, S - N % 10)
+
+
+# iter_obj = iter("Hello!")
+#
+# print(next(iter_obj))
+# print(next(iter_obj))
+# print(next(iter_obj))
+# print(next(iter_obj))
+# print(next(iter_obj))
+# print(next(iter_obj))
+
+# Из заданного списка вывести только положительные элементы
+# def positive(x):
+#     return x % 2 == 0  # функция возвращает только True или False
+#
+# result = filter(positive, [-2, -1, 0, 1, -3, 2, -3])
+#
+# # Возвращается итератор, т.е. перечисляйте или приводите к списку
+# print(list(result))   # [1, 2]
+
+
+# a = ["asd", "bbd", "ddfa", "mcsa"]
+# print(list(map(lambda x: len(x), a)))
