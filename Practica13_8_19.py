@@ -21,7 +21,7 @@ for person in range(1, ticket+1):
     age_person = int(input(f'Возраст посетителя для билета - {person}: '))
     if 18 <= age_person < 25:  # с 18 до 25
         summa += 990
-    if age_person >= 25:  # от 25 и старше
+    elif age_person >= 25:  # от 25 и старше
         summa += 1390
 
 if ticket > registr:  # Скидка на стоимость 10% более 3 посетителей
