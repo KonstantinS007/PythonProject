@@ -1340,7 +1340,7 @@ n = 3
 #
 # deposit = list(map(lambda x: int(x*money/100), per_cent.values()))
 #
-# # это в следующем модуле100
+# # это в следующем модуле
 # # deposit = [int(v * money / 100) for v in per_cent.values()]
 #
 # # находим максимальное значение и его индекс в списке
