@@ -16,6 +16,7 @@
 ticket = int(input('Количество билетов: '))
 summa = 0
 skidka, registr = 10, 3  # процент и условие более зарегестрированых
+person = 0
 
 for person in range(1, ticket+1):
     age_person = int(input(f'Возраст посетителя для билета - {person}: '))
@@ -24,7 +25,10 @@ for person in range(1, ticket+1):
     elif age_person >= 25:  # от 25 и старше
         summa += 1390
 
+
 if ticket > registr:  # Скидка на стоимость 10% более 3 посетителей
     summa = summa-summa/100*skidka
+    print('Скидка: ', skidka, '% Более', registr, 'зарегистрированных.')
 
+print('Количество зарегистрированых: ', person)
 print('Сумма к оплате: ', summa, 'руб.')
