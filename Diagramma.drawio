@@ -158,7 +158,7 @@
         <mxCell id="XOlbOI34ibn0-PIUHwHX-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#788aa3;" edge="1" parent="1" source="XOlbOI34ibn0-PIUHwHX-1" target="KnhxkaK3Gyc1tThBo2Nn-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="XOlbOI34ibn0-PIUHwHX-1" value=open(\Task_15\filename.txt) style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="XOlbOI34ibn0-PIUHwHX-1" value="text" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="-340" y="225" width="100" height="75" as="geometry" />
         </mxCell>
       </root>
