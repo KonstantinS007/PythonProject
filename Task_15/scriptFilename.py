@@ -37,17 +37,17 @@
 
 # myFile = open('filename.txt')
 # myFile = open('filename.txt', 'rt')
-myFile = open('filename.txt', 'rt', encoding="utf8")
-
-newfileName = []
-with open("newfileName.txt") as myFile:
-    for line in myFile:
-        newfileName.append(line.replace("\n", ""))
-
-# myFile = open('filename.txt')
-print(myFile.read())
-
-print(myFile.readlines())
+# myFile = open('filename.txt', 'rt', encoding="utf8")
+#
+# newfileName = []
+# with open("newfileName.txt") as myFile:
+#     for line in myFile:
+#         newfileName.append(line.replace("\n", ""))
+#
+# # myFile = open('filename.txt')
+# print(myFile.read())
+#
+# print(myFile.readlines())
 
 # for line in myFile:
 #     print(line)
@@ -155,10 +155,10 @@ print(myFile.readlines())
 #         if j == 'A':
 #             labirint[ii][jj] = 1
 #             pozIn = (ii, jj)
-#         elif j == 'B':
+#         elif jj == 'B':
 #             labirint[ii][jj] = 0
 #             pozOut = (ii, jj)
-#         elif j == '1':
+#         elif jj == '1':
 #             labirint[ii][jj] = -1
 #         else:
 #             labirint[ii][jj] = 0
@@ -175,3 +175,54 @@ print(myFile.readlines())
 #             print("{:^3}".format(line), end=" ")
 #         print()
 #     print(result)
+
+
+import json
+
+with open('json_example.json', encoding='utf8') as f:
+    templates = json.load(f)
+
+print(templates)
+print(type(templates))
+
+import json
+
+with open('json_example.json', encoding='utf8') as f:
+    strfile = f.read()
+    templates = json.loads(strfile)
+
+print(templates)
+print(type(templates))
+
+import json
+
+template = {
+    'firstname': 'Иван',
+    'lastname': 'Иванов',
+    'isAlive': True,
+    'age': 32,
+    'address': {
+        'streetAddress': 'Нейбута 32',
+        'city': 'Владивосток',
+        'state': '',
+        'postalcode': ''
+    },
+    'phoneNumbers': [
+        {
+            'type': 'mob',
+            'number': '123-333-4455'
+        },
+        {
+            'type': 'office',
+            'number': '123 111-4567'
+        }
+    ],
+    'children': [],
+    'spouse': None
+}
+
+with open('to_json_example.json', 'w', encoding='utf8') as f:
+    json.dump(template, f, ensure_ascii=False, indent=4)
+
+with open('to_json_example.json', encoding='utf8') as f:
+    print(f.read())
