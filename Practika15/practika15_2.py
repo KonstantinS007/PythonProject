@@ -4,35 +4,34 @@ with open('json_example_QaP.json', encoding='utf8') as f:
     templates = json.load(f)
 
 
-def Check_Int(item):
-    return isinstance(item, int)
+def check_int(item1):
+    return isinstance(item1, int)
 
 
-def Check_str(item):
-    return isinstance(item, str)
+def check_str(item1):
+    return isinstance(item1, str)
 
 
-def Check_Bool(item):
-    return isinstance(item, bool)
+def check_bool(item1):
+    return isinstance(item1, bool)
 
 
-def Check_url(item):
-    if isinstance(item, str):
-        return item.startswith('http: // ') or item.startswith('https://')
+def check_url(item1):
+    if isinstance(item1, str):
+        return item1.startswith('http: // ') or item1.startswith('https://')
     else:
         return False
 
 
-def Check_Strvalue(item, val):
-    if isinstance(item, str):
-        return item in val
-
+def check_str_value(item1, val):
+    if isinstance(item1, str):
+        return item1 in val
     else:
         return False
 
 
-def ErrorLog(item, value, string):
-    Error.append({item: f'{value}, {string}'})
+def error_log(item1, value, string):
+    Error.append({item1: f'{value}, {string}'})
 
 
 Error = []
@@ -44,26 +43,26 @@ for items in templates:
     for item in items:
         if item in listofitems:
             if listofitems[item] == 'int':
-                if not Check_Int(items[item]):
-                    ErrorLog(item, items[item], f'ожидали тип {listofitems[item]}')
+                if not check_int(items[item]):
+                    error_log(item, items[item], f'ожидали тип {listofitems[item]}')
                 elif listofitems[item] == 'str':
-                    if not Check_str(items[item]):
-                        ErrorLog(item, items[item], f'ожидали тип {listofitems[item]}')
+                    if not check_str(items[item]):
+                        error_log(item, items[item], f'ожидали тип {listofitems[item]}')
                 elif listofitems[item] == 'bool':
-                    if not Check_Bool(items[item]):
-                        ErrorLog(item, items[item], f'ожидали тип {listofitems[item]}')
+                    if not check_bool(items[item]):
+                        error_log(item, items[item], f'ожидали тип {listofitems[item]}')
                 elif listofitems[item] == 'url':
-                    if not Check_url(items[item]):
-                        ErrorLog(item, items[item], f'ожидали тип {listofitems[item]}')
+                    if not check_url(items[item]):
+                        error_log(item, items[item], f'ожидали тип {listofitems[item]}')
                 elif listofitems[item] == 'val':
-                    if not Check_Strvalue(items[item], ['itemBuyEvent', 'itemViewEvent']):
-                        ErrorLog(item, items[item], 'ожидали значения itemBuyEvent или itemViewEvent')
+                    if not check_str_value(items[item], ['itemBuyEvent', 'itemViewEvent']):
+                        error_log(item, items[item], 'ожидали значения itemBuyEvent или itemViewEvent')
                 else:
-                    ErrorLog(item, items[item], 'HeoxnaanHo 3 HayeHnу')
+                    error_log(item, items[item], 'Неожиданное значение')
             else:
-                ErrorLog(item, items[item], 'Неизвестная переменная')
+                error_log(item, items[item], 'Неизвестная переменная')
 
-if Error == []:
+if Error is []:
     print('pass')
 else:
     print('Fail')
