@@ -5,10 +5,11 @@ def change_Text(text):
     список, состоящий из слов текста.
     """
 
-    for i in '!"\'#$%&()*+-,/:;<=>?@[\\]^_{|}~':
+    for i in r'!"\'#$%&()*+-,/:;<=>?@[\\]^_{|}~':
         text = text.replace(i, '')
 
     return text.split()
+
 
 
 def most_Common(text, length=0):
@@ -42,7 +43,7 @@ def most_Length(text):
 
     most_length = []
     qty_most_length = 0
-    alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    alphabet = r'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'''
     for item in text:
         for char in item:
             if char not in alphabet:
@@ -61,11 +62,17 @@ def most_Length(text):
     return list(set(most_length))
 
 
-nameFile = input('Название файла: ')
+nameFile = input('Название файла ' + '(text1.txt): ')
 
 with open(nameFile, encoding='utf8') as f:
     fileText = f.read()
 
+
 fileText = change_Text(fileText)
+print(len(fileText))
 print(f'Список самых частых слов длинной более трёх символов: {most_Common(fileText, 3)}')
 print(f'Список самых длинных английских слов: {most_Length(fileText)}')
+
+help(change_Text)
+help(most_Common)
+help(most_Length)
