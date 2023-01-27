@@ -72,7 +72,3 @@ fileText = change_Text(fileText)
 print(len(fileText))
 print(f'Список самых частых слов длинной более трёх символов: {most_Common(fileText, 3)}')
 print(f'Список самых длинных английских слов: {most_Length(fileText)}')
-
-help(change_Text)
-help(most_Common)
-help(most_Length)
