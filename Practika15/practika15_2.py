@@ -20,7 +20,7 @@ def check_bool(ite):
 
 
 def check_url(ite):
-    """Возращяет true если в поле строка и имеет наччало http:// или https://"""
+    """Возращяет true если в поле строка и имеет начало http:// или https://"""
     if isinstance(ite, str):
         return ite.startswith('http://') or ite.startswith('https://')
     else:
