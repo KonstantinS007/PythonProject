@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-01-28T18:37:18.015Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="j-yLAO4vbuY82T-iw2eO" version="20.8.13" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-28T18:45:02.290Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="CcspFXQvPLAwyiaobH9A" version="20.8.13" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="677" dy="588" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -33,7 +33,7 @@
           <mxGeometry x="450" y="390" width="140" height="530" as="geometry" />
         </mxCell>
         <mxCell id="N2-jiG50IVHrFEvEO8ib-0" value="тестовые данные&lt;br&gt;txt" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="630" y="30" width="120" height="100" as="geometry" />
+          <mxGeometry x="600" y="30" width="200" height="100" as="geometry" />
         </mxCell>
         <mxCell id="N2-jiG50IVHrFEvEO8ib-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="N2-jiG50IVHrFEvEO8ib-1" target="N2-jiG50IVHrFEvEO8ib-32" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -86,11 +86,11 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="N2-jiG50IVHrFEvEO8ib-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="N2-jiG50IVHrFEvEO8ib-96" target="N2-jiG50IVHrFEvEO8ib-60" edge="1">
+        <mxCell id="N2-jiG50IVHrFEvEO8ib-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.733;exitY=0.941;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="N2-jiG50IVHrFEvEO8ib-96" target="N2-jiG50IVHrFEvEO8ib-60" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="550" y="940" as="sourcePoint" />
+            <mxPoint x="570" y="940" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="520" y="940" />
+              <mxPoint x="553" y="940" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -143,14 +143,14 @@
         <mxCell id="NrR9IdCdJ7Q5m2Nav7Z5-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="N2-jiG50IVHrFEvEO8ib-51" target="N2-jiG50IVHrFEvEO8ib-66">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="600" y="193" />
-              <mxPoint x="600" y="150" />
+              <mxPoint x="580" y="193" />
+              <mxPoint x="580" y="150" />
               <mxPoint x="320" y="150" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="N2-jiG50IVHrFEvEO8ib-51" value="проверка json" style="shape=tape;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="630" y="125" width="120" height="135" as="geometry" />
+          <mxGeometry x="600" y="125" width="200" height="135" as="geometry" />
         </mxCell>
         <mxCell id="N2-jiG50IVHrFEvEO8ib-60" value="&lt;span style=&quot;background-color: rgb(255, 217, 102);&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;JetBrains Mono&amp;quot;, monospace;&quot;&gt;Неожиданное значение&lt;/span&gt;&lt;/span&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="250" y="910" width="120" height="60" as="geometry" />
@@ -296,13 +296,13 @@
             <mxPoint x="620" y="670" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="NrR9IdCdJ7Q5m2Nav7Z5-21" value="" style="endArrow=classic;html=1;rounded=0;fontFamily=Helvetica;fontSize=35;fontColor=#000000;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.23;exitY=0.924;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="N2-jiG50IVHrFEvEO8ib-96" target="N2-jiG50IVHrFEvEO8ib-28">
+        <mxCell id="NrR9IdCdJ7Q5m2Nav7Z5-21" value="" style="endArrow=classic;html=1;rounded=0;fontFamily=Helvetica;fontSize=35;fontColor=#000000;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.285;exitY=0.947;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="N2-jiG50IVHrFEvEO8ib-96" target="N2-jiG50IVHrFEvEO8ib-28">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="490" y="410" as="sourcePoint" />
             <mxPoint x="470" y="210" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="460" y="880" />
-              <mxPoint x="430" y="880" />
+              <mxPoint x="490" y="920" />
+              <mxPoint x="430" y="920" />
               <mxPoint x="430" y="410" />
               <mxPoint x="430" y="220" />
               <mxPoint x="430" y="20" />
@@ -313,8 +313,8 @@
         <mxCell id="NrR9IdCdJ7Q5m2Nav7Z5-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=35;fontColor=#000000;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="N2-jiG50IVHrFEvEO8ib-0" target="N2-jiG50IVHrFEvEO8ib-64">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="600" y="65" />
-              <mxPoint x="600" y="110" />
+              <mxPoint x="580" y="80" />
+              <mxPoint x="580" y="110" />
               <mxPoint x="324" y="110" />
             </Array>
           </mxGeometry>
@@ -331,6 +331,9 @@
               <mxPoint x="100" y="890" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="NrR9IdCdJ7Q5m2Nav7Z5-36" value="&lt;h2 style=&quot;box-sizing: border-box; margin-bottom: 0px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; text-align: start; margin-top: 0px !important; font-weight: var(--base-text-weight-normal, 400)  !important; flex: 1 1 auto !important; align-self: center !important; order: inherit !important; width: auto !important; min-width: 0px !important; margin-right: var(--base-size-8, 8px)  !important; margin-left: var(--base-size-8, 8px)  !important;&quot; class=&quot;breadcrumb flex-auto flex-self-center min-width-0 text-normal mx-2 width-full width-md-auto flex-order-1 flex-md-order-none mt-3 mt-md-0&quot; id=&quot;blob-path&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 217, 102);&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;practika15_2&lt;/font&gt;&lt;/span&gt;&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=21;fontFamily=Helvetica;fontColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="10" y="10" width="150" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
