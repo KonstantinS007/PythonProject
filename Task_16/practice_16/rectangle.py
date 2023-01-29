@@ -9,6 +9,6 @@ class Rectangle:
     def getHeigth(self):
         return self.height
 
-# Метод рачитывающий площадь
+# Метод расчитывающий площадь
     def getArea(self):
         return self.width * self.height
