@@ -1,6 +1,7 @@
+import txt
 from classCat import Cat
-with open('dict_cats.json') as jcats:
-    cats = json.load(jcats)
+with open('dict_cats.txt') as jcats:
+    cats = txt.load(jcats)
 
 for cat in cats:
     cat_obj = Cat()
