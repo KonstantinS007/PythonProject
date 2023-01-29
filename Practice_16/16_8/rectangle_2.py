@@ -21,7 +21,7 @@ circle_2 = Circle(12)
 # выводим площади двух кругов
 print(circle_1.get_area_circle(), circle_2.get_area_circle())
 
-# создаем класс фигуры
+# создаем коллекцию фигур
 figures = [rect_1, rect_2, square_1, square_2, circle_1, circle_2]
 
 for figure in figures:
