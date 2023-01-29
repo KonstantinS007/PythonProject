@@ -1,23 +1,8 @@
+import json
+
 from classCat import Cat
-
-cats = [
-  {
-    "name": "Сэм",
-    "gender": "мальчик",
-    "age": 2
-  },
-  {
-    "name": "Мурка",
-    "gender": "девочка",
-    "age": 1
-  },
-  {
-    "name": "Пушок",
-    "gender": "мальчик",
-    "age": 3
-  }
-]
-
+with open('jsonCats.json', encoding='utf8') as f:
+    cats = json.load(f)
 
 
 for cat in cats:
