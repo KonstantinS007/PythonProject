@@ -1,7 +1,24 @@
-import txt
 from classCat import Cat
-with open('dict_cats.txt') as jcats:
-    cats = txt.load(jcats)
+
+cats = [
+  {
+    "name": "Сэм",
+    "gender": "мальчик",
+    "age": 2
+  },
+  {
+    "name": "Мурка",
+    "gender": "девочка",
+    "age": 1
+  },
+  {
+    "name": "Пушок",
+    "gender": "мальчик",
+    "age": 3
+  }
+]
+
+
 
 for cat in cats:
     cat_obj = Cat()
