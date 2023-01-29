@@ -1,5 +1,6 @@
 from classCat import Cat
-from dict_cats import cats
+with open('dict_cats.json') as jcats:
+    cats = json.load(jcats)
 
 for cat in cats:
     cat_obj = Cat()
