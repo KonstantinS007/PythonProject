@@ -1346,3 +1346,6 @@ n = 3
 # # находим максимальное значение и его индекс в списке
 # i = deposit.index(max(deposit))
 # print(deposit[i])
+
+n = {'wer': 'we', 'cc': 'ee'}
+print(type(n))
