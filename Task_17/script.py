@@ -429,14 +429,191 @@
 
 # Task 17.8.3
 
-array = [2, 3, 1, 4, 6, 5, 9, 8, 7]
-count = 0
+# array = [2, 3, 1, 4, 6, 5, 9, 8, 7]
+# count = 0
+#
+# for i in range(len(array)):
+#     for j in range(len(array) - i - 1):
+#         count += 1
+#         if array[j] > array[j + 1]:
+#             array[j], array[j + 1] = array[j + 1], array[j]
+#
+# print(array)
+# print(count)
 
-for i in range(len(array)):
-    for j in range(len(array) - i - 1):
-        count += 1
-        if array[j] > array[j + 1]:
-            array[j], array[j + 1] = array[j + 1], array[j]
+# array = [2, 3, 1, 4, 6, 5, 9, 8, 7]
+# count = 0
+# for i in range(1, len(array)):
+#     x = array[i]
+#     idx = i
+#     while idx > 0 and array[idx-1] > x:
+#         count += 1
+#         array[idx] = array[idx-1]
+#         idx -= 1
+#     array[idx] = x
+#
+# print(array)
+# print(count)
 
-print(array)
-print(count)
+# Task 17.8.6
+
+# array = [2, 3, 1, 4, 6, 5, 9, 8, 7]
+#
+#
+# def merge_sort(L):  # "разделяй"
+#     if len(L) < 2:  # если кусок массива равен 2,
+#         return L[:]  # выходим из рекурсии
+#     else:
+#         middle = len(L) // 2  # ищем середину
+#         left = merge_sort(L[:middle])  # рекурсивно делим левую часть
+#         right = merge_sort(L[middle:])  # и правую
+#         return merge(left, right)  # выполняем слияние
+#
+#
+# def merge(left, right):  # "властвуй"
+#     result = []  # результирующий массив
+#     i, j = 0, 0  # указатели на элементы
+#
+#     # пока указатели не вышли за границы
+#     while i < len(left) and j < len(right):
+#         if left[i] < right[j]:
+#             result.append(left[i])
+#             i += 1
+#         else:
+#             result.append(right[j])
+#             j += 1
+#
+#     # добавляем хвосты
+#     while i < len(left):
+#         result.append(left[i])
+#         i += 1
+#
+#     while j < len(right):
+#         result.append(right[j])
+#         j += 1
+#
+#     return result
+#
+#
+# print(merge(array))
+
+# четный список
+# def qsort(array, left, right):
+#     middle = (left + right) // 2
+#
+#     p = array[middle]
+#     i, j = left, right
+#     while i <= j:
+#         while array[i] < p:
+#             i += 1
+#         while array[j] > p:
+#             j -= 1
+#         if i <= j:
+#             array[i], array[j] = array[j], array[i]
+#             i += 1
+#             j -= 1
+#
+#     if j > left:
+#         qsort(array, left, j)
+#     if right > i:
+#         qsort(array, i, right)
+#
+#
+# array = [2, 3, 1, 4, 6, 5, 8, 7]
+# print(qsort(array, 0, len(array)-1))
+
+# import random
+# nums = [4, 1, 6, 3, 2, 7, 8]
+
+
+# def quicksort(nums):
+#    if len(nums) <= 1:
+#        return nums
+#    else:
+#        q = random.choice(nums)
+#        s_nums = []
+#        m_nums = []
+#        e_nums = []
+#        for n in nums:
+#            if n < q:
+#                s_nums.append(n)
+#            elif n > q:
+#                m_nums.append(n)
+#            else:
+#                e_nums.append(n)
+#        return quicksort(s_nums) + e_nums + quicksort(m_nums)
+
+
+# print(quicksort(nums))
+
+# import random
+# array = [2, 3, 1, 4, 6, 5, 9, 8, 7]
+#
+#
+# def qsort_random(array, left, right):
+#     p = random.choice(array[left:right + 1])
+#     i, j = left, right
+#     while i <= j:
+#         while array[i] < p:
+#             i += 1
+#         while array[j] > p:
+#             j -= 1
+#         if i <= j:
+#             array[i], array[j] = array[j], array[i]
+#             i += 1
+#             j -= 1
+#
+#     if j > left:
+#         qsort_random(array, left, j)
+#     if right > i:
+#         qsort_random(array, i, right)
+#     return array
+#
+#
+# print(qsort_random(array, 0, len(array)-1))
+
+# import random
+# nums = [4, 1, 6, 3, 2, 7, 8]
+#
+#
+# def quicksort(nums, fst, lst):
+#     if fst >= lst:
+#         return nums
+#
+#     i, j = fst, lst
+#     pivot = nums[random.randint(fst, lst)]
+#
+#     while i <= j:
+#         while nums[i] < pivot:
+#             i += 1
+#         while nums[j] > pivot:
+#             j -= 1
+#         if i <= j:
+#             nums[i], nums[j] = nums[j], nums[i]
+#             i, j = i + 1, j - 1
+#     quicksort(nums, fst, j)
+#     quicksort(nums, i, lst)
+#     return nums
+#
+#
+# print(quicksort(nums, 0, len(nums)-1))
+
+# # сортировка Хоара в функциональном виде
+# import random
+#
+#
+# def quicksort(nums):
+#     if len(nums) <= 1:
+#         return nums
+#     else:
+#         q = random.choice(nums)
+#     l_nums = [n for n in nums if n < q]
+#
+#     e_nums = [q] * nums.count(q)
+#     b_nums = [n for n in nums if n > q]
+#     return quicksort(l_nums) + e_nums + quicksort(b_nums)
+#
+#
+# nums = [4, 1, 6, 3, 2, 7, 8]
+# print(quicksort(nums))
+
