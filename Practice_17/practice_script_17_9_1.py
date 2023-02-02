@@ -46,11 +46,11 @@ while vod:
     else:
         vod = False
 
-list_numer.append(numer)
+list_numer.append(numer)  # ввод поискового числа
 # Сортировка по возрастанию алгоритмом пузырёк
 list_puz = sort_puz(list_numer)
 # Вызов алгоритма двоичного поиска и вывод индекса
 index = binary_search(list_puz, numer, 0, len(list_puz) - 1)
 print("Индекс числа меньшего, чем введенное:", index - 1)
-list_puz.pop(index)
+list_puz.pop(index)  # удаление поискового числа
 print(list_puz)
