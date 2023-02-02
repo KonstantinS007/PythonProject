@@ -3,7 +3,7 @@
 # и нахождение индекса числа после сортировки по возрастанию
 
 
-def sort_puz(nums):  # Алгоритмом поиска пузырек
+def sort_puz(nums):  # Алгоритмом поиска пузырьком
     n = 1
     while n < len(nums):
         for i in range(len(nums) - n):
@@ -33,6 +33,7 @@ def binary_search(array, element, left, right):  # Алгоритм двоичн
 # Ввод последовательности чисел и преобразование в список
 list_vod = input("Введите последовательность натуральных чисел через пробел\nНапример(27 8 4 90 64 32 17 29 33): ")
 list_numer = [int(x) for x in list_vod.split()]
+
 # Ввод значения для поиска индекса меньшего числа в пределах диапазона списка
 list_min, list_max = min(list_numer), max(list_numer)
 vod = True  # Пока не введено число в диапазоне для поиска
@@ -49,4 +50,4 @@ while vod:
 list_numer.append(numer)
 list1_hoar = sort_puz(list_numer)
 # Вызов алгоритма двоичного поиска и вывод индекса
-print("Индекс меньшего числа введенного:", binary_search(list1_hoar, numer, -1, len(list1_hoar) - 1))
+print("Индекс числа меньшего введенного:", binary_search(list1_hoar, numer, -1, len(list1_hoar) - 1))
