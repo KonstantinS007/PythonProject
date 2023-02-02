@@ -20,7 +20,7 @@ def binary_search(array, element, left, right):  # Алгоритм двоичн
 
         middle = (right + left) // 2  # находимо середину
         if array[middle] == element:  # если элемент в середине,
-            return middle - 1  # возвращаем этот индекс
+            return middle  # возвращаем этот индекс
         elif element < array[middle]:  # если элемент меньше элемента в середине
             # рекурсивно ищем в левой половине
             return binary_search(array, element, left, middle - 1)
@@ -46,8 +46,11 @@ while vod:
     else:
         vod = False
 
-# Сортировка по возрастанию алгоритмом пузырёк
 list_numer.append(numer)
+# Сортировка по возрастанию алгоритмом пузырёк
 list_puz = sort_puz(list_numer)
 # Вызов алгоритма двоичного поиска и вывод индекса
-print("Индекс числа меньшего чем введенное:", binary_search(list_puz, numer, 0, len(list_puz) - 1))
+index = binary_search(list_puz, numer, 0, len(list_puz) - 1)
+print("Индекс числа меньшего чем введенное:", index - 1)
+list_puz.pop(index)
+print(list_puz)
