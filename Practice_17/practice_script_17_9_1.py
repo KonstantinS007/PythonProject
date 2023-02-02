@@ -39,7 +39,7 @@ list_min, list_max = min(list_numer), max(list_numer)
 vod = True  # Пока не введено число в диапазоне для поиска
 numer = 0
 while vod:
-    numer = input(f'Введите число для определения индекса меньшего введенного в диапазоне ({list_min + 1}-{list_max}):')
+    numer = input(f'Введите число для определения индекса меньшего вводимого в диапазоне ({list_min + 1}-{list_max}):')
     numer = int(numer)
     if not list_min < numer <= list_max:
         print('Число вне диапазона. Повторите ввод.')
@@ -48,6 +48,6 @@ while vod:
 
 # Сортировка по возрастанию алгоритмом пузырёк
 list_numer.append(numer)
-list1_hoar = sort_puz(list_numer)
+list_puz = sort_puz(list_numer)
 # Вызов алгоритма двоичного поиска и вывод индекса
-print("Индекс числа меньшего введенного:", binary_search(list1_hoar, numer, -1, len(list1_hoar) - 1))
+print("Индекс числа меньшего чем введенное:", binary_search(list_puz, numer, 0, len(list_puz) - 1))
