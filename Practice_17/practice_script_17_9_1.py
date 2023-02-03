@@ -39,7 +39,8 @@ list_min, list_max = min(list_numer), max(list_numer)
 vod = True  # Пока не введено число в диапазоне для поиска
 numer = 0
 while vod:
-    numer = input(f'Введите число для определения индекса меньшего, чем вводимое в диапазоне ({list_min + 1}-{list_max}):')
+    numer = input(f'Введите число для определения индекса меньшего'
+                  f', чем вводимое в диапазоне ({list_min + 1}-{list_max}):')
     numer = int(numer)
     if not list_min < numer <= list_max:
         print('Число вне диапазона. Повторите ввод.')
