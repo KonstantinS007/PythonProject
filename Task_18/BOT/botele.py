@@ -1,4 +1,4 @@
-#           BOT_MAIN.PY
+#          botele.py
 import telebot
 
 from extensions import ConvertionException, CryptoConverter
@@ -7,7 +7,6 @@ from config import TOKEN
 
 # Создали объект bot
 bot = telebot.TeleBot(TOKEN)
-
 # Обрабатываются все сообщения, содержащие команды '/start' or '/help'.
 
 
@@ -33,18 +32,16 @@ def values(message: telebot.types.Message):
 def get_price(message: telebot.types.Message):
     try:
         values = message.text.split(' ')
-
         if len(values) != 3:
             raise ConvertionException('Слишком много параметров.')
         quote, base, amount = values
-        total_base = CryptoConverter.get_price(quote, base, amount)
+        total_base = CryptoConverter.convert(quote, base, amount)
     except ConvertionException as e:
         bot.reply_to(message, f'Ошибка пользователя\n{e}')
     except Exception as e:
-        bot.reply_to(message, f'Не удалось обработать команду\n{e}')
+        bot.reply_to(message, f'Не удалось обработать команду\n{e}\n')
     else:
-        text = f'Цена {amount} {quote} в {base} - {total_base}, понял какашка'
+        text = f'Цена {amount} {quote} в {base} - {total_base}'
         bot.send_message(message.chat.id, text)
-
 
 bot.polling(none_stop=True)

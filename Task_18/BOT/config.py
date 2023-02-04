@@ -1,6 +1,5 @@
-#         CONFIG.PY
-# import requests
-# import json
+#         config.py
+
 with open('../../../Cat.txt', 'r') as f:
     cat = f.read()
 TOKEN = cat
@@ -8,8 +7,4 @@ TOKEN = cat
 TIMEZONE = 'MOSKVA'
 TIMEZONE_COMMON_NAME = 'MOSKVA'
 
-keys = {
-      'рубль': 'RUB',
-      'доллар': 'USD',
-      'евро': 'EUR',
-}
+keys = {'рубль': 'RUB', 'доллар': 'USD', 'евро': 'EUR'}

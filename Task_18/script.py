@@ -62,15 +62,30 @@ import lxml.html
 from lxml import etree
 
 # создадим объект ElementTree. Он возвращается функцией parse()
-tree = etree.parse('Welcome to Python.org.html',
-                   lxml.html.HTMLParser())  # попытаемся спарсить наш файл с помощью HTML-парсера. Сам HTML — это то, что мы скачали и поместили в папку из браузера.
+# tree = etree.parse('Welcome to Python.org.html',
+#                    lxml.html.HTMLParser())  # попытаемся спарсить наш файл с помощью HTML-парсера. Сам HTML — это то, что мы скачали и поместили в папку из браузера.
+#
+# ul = tree.findall(
+#     '//*[@id="content"]/div/section/div[2]/div[1]/div/ul/li[1]')  # помещаем в аргумент методу findall скопированный xpath. Здесь мы получим все элементы списка новостей. (Все заголовки и их даты)
+#
+# # создаём цикл? в котором будем выводить название каждого элемента из списка
+# for li in ul:
+#     a = li.find('a')  # в каждом элементе находим, где хранится заголовок новости. У нас это тег <a>. Т.е. гиперссылка, на которую нужно нажать, чтобы перейти на страницу с новостью. Гиперссылки в HTML — это всегда тэг <a>.
+#     t = li.find('time')
+#     print(a.text)  # из этого тега забираем текст — это и будет нашим названием
+#     print(t.get('datetime'))
+import json
+import requests
+quote, base, amount = 'рубль', 'доллар', '2'
+keys = {'рубль': 'RUB', 'доллар': 'USD', 'евро': 'EUR'}
+quote_ticker = keys[quote]
+base_ticker = keys[base]
+r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')#.json()
+# total_base = r[base_ticker] * float(amount)
 
-ul = tree.findall(
-    '//*[@id="content"]/div/section/div[2]/div[1]/div/ul/li[1]')  # помещаем в аргумент методу findall скопированный xpath. Здесь мы получим все элементы списка новостей. (Все заголовки и их даты)
-
-# создаём цикл? в котором будем выводить название каждого элемента из списка
-for li in ul:
-    a = li.find('a')  # в каждом элементе находим, где хранится заголовок новости. У нас это тег <a>. Т.е. гиперссылка, на которую нужно нажать, чтобы перейти на страницу с новостью. Гиперссылки в HTML — это всегда тэг <a>.
-    t = li.find('time')
-    print(a.text)  # из этого тега забираем текст — это и будет нашим названием
-    print(t.get('datetime'))
+total_base = json.loads(r.content)[keys[base]]*float(amount)
+total_base = round(total_base, 2)
+print(r)
+print(type(r))
+print(total_base)
+print(type(total_base))
