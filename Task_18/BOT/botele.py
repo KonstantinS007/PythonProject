@@ -35,7 +35,7 @@ def get_price(message: telebot.types.Message):
         values = message.text.split(' ')
 
         if len(values) != 3:
-           raise ConvertionException('Слишком много параметров.')
+            raise ConvertionException('Слишком много параметров.')
         quote, base, amount = values
         total_base = CryptoConverter.get_price(quote, base, amount)
     except ConvertionException as e:
@@ -46,6 +46,5 @@ def get_price(message: telebot.types.Message):
         text = f'Цена {amount} {quote} в {base} - {total_base}, понял какашка'
         bot.send_message(message.chat.id, text)
 
+
 bot.polling(none_stop=True)
-
-
