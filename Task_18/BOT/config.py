@@ -9,7 +9,7 @@ TIMEZONE = 'MOSKVA'
 TIMEZONE_COMMON_NAME = 'MOSKVA'
 
 keys = {
-      'рубль': 'RUR',
+      'рубль': 'RUB',
       'доллар': 'USD',
       'евро': 'EUR',
 }

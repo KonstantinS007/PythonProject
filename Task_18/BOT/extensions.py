@@ -1,8 +1,7 @@
 #           EXTENSIONS.PY
 import requests
-# import json
+import json
 from config import keys
-# from config import TOKEN
 
 
 class ConvertionException(Exception):
@@ -35,5 +34,5 @@ class CryptoConverter:
             text = '\n Не удалось обработать количество'
             bot.send_message(message.chat.id, text)
         r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}').json()
-
-        return r[base_ticker]
+        total_base = json.loads(r.content)[keys[base]]
+        return total_base
