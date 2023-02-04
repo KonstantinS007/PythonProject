@@ -1,11 +1,12 @@
 #         CONFIG.PY
 # import requests
 # import json
+with open('../../../Cat.txt', 'r') as f:
+    cat = f.read()
+TOKEN = cat
 
-TOKEN = 'НОМЕР ТОКЕНА'
-
-TIMEZONE = 'ROSTOV ON DON'
-TIMEZONE_COMMON_NAME = 'ROSTOV ON DON'
+TIMEZONE = 'MOSKVA'
+TIMEZONE_COMMON_NAME = 'MOSKVA'
 
 keys = {
       'рубль': 'RUR',
