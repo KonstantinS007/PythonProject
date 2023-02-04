@@ -31,6 +31,6 @@ class CryptoConverter:
 
         r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')#.json()
         #  total_base = r[base_ticker] * float(amount) # ←-----------можно вот так, без#---------------------------↑
-        total_base = json.loads(r.content)[keys[base]] * float(amount)
+        total_base = json.loads(r.content)[keys[base]] * float(amount)  # ←--а вот это #
         total_base = round(total_base, 2)
         return total_base
