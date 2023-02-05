@@ -22,9 +22,9 @@ def echo_test(message: telebot.types.Message):
 
 @bot.message_handler(commands=['values'])
 def values(message: telebot.types.Message):
-    text = 'Доступные валюты:'
+    text = 'Доступные валюты:\n'
     for key in keys.keys():
-        text = '\n'.join((text, key,))
+        text = ' '.join((text, key,))
     bot.reply_to(message, text)
 
 
