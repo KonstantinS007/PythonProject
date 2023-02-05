@@ -29,8 +29,8 @@ class CryptoConverter:
         except ValueError:
             raise ConvertionException(f'Не удалось обработать количество {amount}')
 
-        r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}').json()
-        total_base = r[base_ticker] * float(amount) # ←-----------можно вот так, сразу считывать json #--------↑
-        #  total_base = json.loads(r.content)[keys[base]] * float(amount)
+        r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')#.json()
+        # total_base = r[base_ticker] * float(amount)  # Можно вот так, сразу считывать json в dict-------------------↑
+        total_base = json.loads(r.content)[keys[base]] * float(amount)  # Через библиотеку import json
         total_base = round(total_base, 2)
         return total_base
