@@ -1,7 +1,7 @@
 #           EXTENSIONS.PY
 import requests
 import json
-from Practice_18.TeleBOT.config import keys
+from config import keys
 
 
 class ConvertionException(Exception):
@@ -29,8 +29,8 @@ class CryptoConverter:
         except ValueError:
             raise ConvertionException(f'Не удалось обработать количество {amount}')
 
-        r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')#.json()
-        #  total_base = r[base_ticker] * float(amount) # ←-----------можно вот так, без#---------------------------↑
-        total_base = json.loads(r.content)[keys[base]] * float(amount)  # ←--а вот это #
+        r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}').json()
+        total_base = r[base_ticker] * float(amount) # ←-----------можно вот так, сразу считывать json #--------↑
+        #  total_base = json.loads(r.content)[keys[base]] * float(amount)
         total_base = round(total_base, 2)
         return total_base
