@@ -1,7 +1,7 @@
 #           EXTENSIONS.PY
 import requests
 import json
-from config import keys
+from Practice_18.TeleBOT.config import keys
 
 
 class ConvertionException(Exception):
