@@ -23,8 +23,8 @@ def echo_test(message: telebot.types.Message):
 @bot.message_handler(commands=['values'])
 def values(message: telebot.types.Message):
     text = 'Доступные валюты:\n'
-    for key in keys.keys():
-        text = ' '.join((text, key,))
+    for key in keys.keys()+1:
+        text = ', '.join((text, key,))
     bot.reply_to(message, text)
 
 
@@ -37,9 +37,9 @@ def get_price(message: telebot.types.Message):
         quote, base, amount = values
         total_base = CryptoConverter.convert(quote, base, amount)
     except ConvertionException as e:
-        bot.reply_to(message, f'Ошибка пользователя./help\n{e}')
+        bot.reply_to(message, f'Ошибка пользователя./help:\n{e}')
     except Exception as e:
-        bot.reply_to(message, f'Не удалось обработать команду/help\n{e}\n')
+        bot.reply_to(message, f'Не удалось обработать команду:\n{e}\n')
     else:
         text = f'Цена {amount} {quote} в {base} - {total_base}'
         bot.send_message(message.chat.id, text)
