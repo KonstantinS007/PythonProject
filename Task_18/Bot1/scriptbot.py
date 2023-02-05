@@ -1,5 +1,6 @@
 #  .\scriptbot.py
 import telebot
+from telebot import types
 
 with open('../../../Cat.txt', 'r') as f:
     cat = f.read()
@@ -7,14 +8,14 @@ with open('../../../Cat.txt', 'r') as f:
 bot = telebot.TeleBot(cat)
 
 
-@bot.message_handler(commands=['start', 'help'])
-def repeat(message: telebot.types.Message):
-    bot.reply_to(message, f"Ёжик вреднёжик, {message.chat.username}")
+@bot.message_handler(commands=['start']) #создаем команду
+def start(message):
+    markup = types.InlineKeyboardMarkup()
+    button1 = types.InlineKeyboardButton("Текст", url='https://habr.com')
+    markup.add(button1)
+    bot.send_message(message.chat.id, "на кнопку".format(message.from_user), reply_markup=markup)
 
 
-@bot.message_handler(content_types=['photo', ])
-def say_lmao(message: telebot.types.Message):
-    bot.reply_to(message, 'Nice meme XDD')
 
 
-bot.polling(none_stop=True)
+bot.polling()

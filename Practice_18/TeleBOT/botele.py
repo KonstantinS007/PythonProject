@@ -45,4 +45,4 @@ def get_price(message: telebot.types.Message):
         bot.send_message(message.chat.id, text)
 
 
-bot.polling(none_stop=True)
+bot.polling()
