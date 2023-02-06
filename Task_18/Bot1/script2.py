@@ -1,14 +1,12 @@
-#  .\scriptbot.py
 import telebot
 from telebot import types
-
 with open('../../../Cat.txt', 'r') as f:
-    cat = f.read()
+    TOKEN = f.read()
 
-bot = telebot.TeleBot(cat)
+bot = telebot.TeleBot(TOKEN)
 
 
-@bot.message_handler(commands=['start'])  # создаем команду
+@bot.message_handler(commands=['start']) #  создаем команду
 def start(message):
     markup = types.InlineKeyboardMarkup()
     button1 = types.InlineKeyboardButton("Текст", url='https://habr.com')
