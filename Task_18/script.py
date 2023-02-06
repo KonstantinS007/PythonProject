@@ -83,14 +83,14 @@
 #     print(t.get('datetime'))
 import json
 import requests
-quote, base, amount = 'рубль', 'доллар', '2'
+quote, base, amount = 'доллар', 'рубль', '1'
 keys = {'рубль': 'RUB', 'доллар': 'USD', 'евро': 'EUR'}
 quote_ticker = keys[quote]
 base_ticker = keys[base]
-r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')#.json()
-# total_base = r[base_ticker] * float(amount)
+r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}').json()
+total_base = r[base_ticker] * float(amount)
 
-total_base = json.loads(r.content)[keys[base]]*float(amount)
+# total_base = json.loads(r.content)[keys[base]]*float(amount)
 total_base = round(total_base, 2)
 print(r)
 print(type(r))
