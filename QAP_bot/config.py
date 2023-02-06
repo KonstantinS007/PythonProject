@@ -1,4 +1,5 @@
-token = '1493436800:AAF1Eult9X13lyLQGGdScK63MbGOJyGqGbk'
+with open('../../Cat.txt', 'r') as f:
+    token = f.read()
 
 keys = {
     'евро': 'EUR',
