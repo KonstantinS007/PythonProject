@@ -38,14 +38,14 @@ def get_price(message: telebot.types.Message):
         total_base = CryptoConverter.convert(quote, base, amount)
     except ConvertionException as e:
         bot.reply_to(message, f'Ошибка пользователя./help:\n{e}')
-        with open('1227436.jpg', 'rb') as f:
-            img = f.read()
-        bot.send_photo(message.chat.id, img)
+        # with open('1227436.jpg', 'rb') as f:
+        #     img = f.read()
+        # bot.send_photo(message.chat.id, img)
     except Exception as e:
         bot.reply_to(message, f'Не удалось обработать команду:\n{e}')
-        with open('44334231.jpg', 'rb') as f:
-            img = f.read()
-        bot.send_photo(message.chat.id, img)
+        # with open('44334231.jpg', 'rb') as f:
+        #     img = f.read()
+        # bot.send_photo(message.chat.id, img)
 
     else:
         text = f'Цена {amount} {quote} в {base} - {total_base}'
