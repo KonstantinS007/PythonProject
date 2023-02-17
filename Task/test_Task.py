@@ -1,6 +1,6 @@
 import sys
 import pytest
-
+# pytest -v -s -k "only"
 
 @pytest.mark.skip(reason="Баг в продукте - <ссылка>")
 def test_one(): # Это наш тест, который находит тот самый баг
@@ -20,9 +20,27 @@ def test_flaky():
 def test_not_for_windows():
     pass
 
-c
 @pytest.mark.xfail(raises=RuntimeError)
 def test_x_status_runtime_only():
     pass
 
 
+@pytest.mark.api
+@pytest.mark.auth
+def test_auth_api():
+   pass
+
+@pytest.mark.ui
+@pytest.mark.auth
+def test_auth_ui():
+   pass
+
+@pytest.mark.api
+@pytest.mark.event
+def test_event_api():
+   pass
+
+@pytest.mark.ui
+@pytest.mark.event
+def test_event_ui():
+   pass
