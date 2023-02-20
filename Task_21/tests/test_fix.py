@@ -109,7 +109,7 @@ def request_fixture(request):
 
 
 class TestClassPets:
-
+    #
     def test_getAllPets2(self, get_key):
         response = requests.get(url='https://petfriends.skillfactory.ru/api/pets',
                                 headers={"Cookie": get_key})
