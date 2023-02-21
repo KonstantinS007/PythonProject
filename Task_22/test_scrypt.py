@@ -85,5 +85,4 @@ import pytest
 @pytest.mark.parametrize(“g”, [0, 15, 150, 255])
 @pytest.mark.parametrize(“b”, [0, 30, 255])
 def test_color_picker(r, g, b):
-    print("r: {0}, g: {1}".format(b, r))
-    #     assert True
+    print()
