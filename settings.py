@@ -1,0 +1,6 @@
+valid_email = "uzerovalex9@gmail.com"
+valid_password = "qwerty123"
+no_valid_email = "2"
+no_valid_password = "2"
+valid_password2 = "321ytrewq"
+valid_email2 = "uzerov@gmail.com"

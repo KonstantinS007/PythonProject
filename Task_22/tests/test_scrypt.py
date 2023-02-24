@@ -1,4 +1,4 @@
-# import pytest
+import pytest
 #
 #
 # def python_string_slicer(str):
@@ -49,7 +49,7 @@
 #    print ("Входная строка: {0}\nВыходная строка: {1}\nОжидаемое значение: {2}".format(input, result, expected_output))
 #    assert result == expected_output
 
-import pytest
+
 #
 #
 # @pytest.mark.parametrize("x", [1, 2, 3])
@@ -81,8 +81,43 @@ import pytest
 #     assert True
 
 
-@pytest.mark.parametrize(“r”, [0, 255])
-@pytest.mark.parametrize(“g”, [0, 15, 150, 255])
-@pytest.mark.parametrize(“b”, [0, 30, 255])
-def test_color_picker(r, g, b):
-    print()
+# @pytest.mark.parametrize(“r”, [0, 255])
+# @pytest.mark.parametrize(“g”, [0, 15, 150, 255])
+# @pytest.mark.parametrize(“b”, [0, 30, 255])
+# def test_color_picker(r, g, b):
+#     print(r, g, b)
+
+# @pytest.fixture(autouse=True)
+# def ket_api_key():
+#    """ Проверяем, что запрос api-ключа возвращает статус 200 и в результате содержится слово key"""
+#
+#    # Отправляем запрос и сохраняем полученный ответ с кодом статуса в status, а текст ответа в result
+#    status, pytest.key = pf.get_api_key(valid_email, valid_password)
+#
+#    # Сверяем полученные данные с нашими ожиданиями
+#    assert status == 200
+#    assert 'key' in pytest.key
+#    yield
+#    # Проверяем что статус ответа = 200 и имя питомца соответствует заданному
+#    assert pytest.status == 200
+#
+#
+# @pytest.mark.parametrize("filter", ['', 'my_pets'], ids= ['empty string', 'only my pets'])
+# def test_get_all_pets_with_valid_key(filter):
+#    """ Проверяем, что запрос всех питомцев возвращает не пустой список.
+#    Для этого сначала получаем api-ключ и сохраняем в переменную auth_key. Далее, используя этот ключ,
+#    запрашиваем список всех питомцев и проверяем, что список не пустой.
+#    Доступное значение параметра filter - 'my_pets' либо '' """
+#
+#    pytest.status, result = pf.get_list_of_pets(pytest.key, filter)
+#
+#    assert len(result['pets']) > 0
+
+
+@pytest.mark.parametrize("x", [-1, 0, 1], ids=["negative", "zero", "positive"])
+@pytest.mark.parametrize("y", [100, 1000], ids=["3 digit", "4 digit"])
+def test_multiply_params(x, y):
+   print("x: {0}, y: {1}".format(x, y))
+   assert True
+
+
