@@ -1,4 +1,4 @@
-import pytest
+
 from selenium import webdriver as selenium_webdriver
 from selenium.webdriver.common.by import By
 import time

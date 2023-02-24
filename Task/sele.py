@@ -29,7 +29,7 @@ def test_show_my_pets():
     assert pytest.driver.find_element(By.TAG_NAME, 'h1').text == "PetFriends"
 
     pytest.driver.get('https://petfriends.skillfactory.ru/my_pets')
-    assert pytest.driver.find_element(By.TAG_NAME, 'h2').text == "ЛЮБОВЬ ГУЛЬБИНА"
+    assert pytest.driver.find_element(By.TAG_NAME, 'h2').text == "Konstantin_S"
 
     #Проверка№1
     # количество строк в таблице

@@ -79,6 +79,9 @@ def time_delta():
     print(f"\nТест шел: {end_time - start_time}")
 
 
+#
+
+
 @pytest.fixture(scope="class", autouse=True)
 def auth_key():
     headers = {
