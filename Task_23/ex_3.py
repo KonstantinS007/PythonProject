@@ -48,7 +48,8 @@ date_from.send_keys("09.02.2023")
 date_from.send_keys(Keys.RETURN)
 
 
-date_to = driver.find_element(By.CSS_SELECTOR, "*[name=\"date_to\"]")
+date_to = driver.find_element(By.CSS_SELECTOR, "*[name=\"date_back\"]")
+date_to.click()
 date_to.send_keys("23.02.2023")
 date_from.send_keys(Keys.RETURN)
 
