@@ -1,3 +1,4 @@
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -8,7 +9,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class TestLoginStellarBurgers:
 
-    def setap(self):
+    def setup(self):
         self.user = "Kot@kot.ru"
         self.password = "kot987"
 
@@ -29,11 +30,11 @@ class TestLoginStellarBurgers:
         self.open()
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Войти в аккаунт')]"))).click()
         self.login()
-        self.close()
 
     def test_login_from_cabinet(self):
         self.open()
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Личный кабинет')]"))).click()
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//p[contains(text(),'Личный Кабинет')]"))).click()
         self.login()
-        self.close()
 
+    def teardown(self):
+        self.close()
