@@ -37,18 +37,18 @@ def test_petfriends(selenium):
     field_email = selenium.find_element(By.ID, "email")
     field_email.click()
     field_email.clear()
-    field_email.send_keys("isaid.zx@gmail.com")
+    field_email.send_keys("uzerovalex9@gmail.com")
 
     field_pass = selenium.find_element(By.ID, "pass")
     field_pass.click()
     field_pass.clear()
-    field_pass.send_keys("qwerty1234")
+    field_pass.send_keys("qwerty123")
 
     btn_submit = selenium.find_element(By.XPATH, "//button[@type='submit']")
     btn_submit.click()
 
     # Save cookies of the browser after the login
-    with open('my_cookies.txt', 'wb', encoding='utf8') as cookies:
+    with open('my_cookies.txt', 'wb') as cookies:
         pickle.dump(selenium.get_cookies(), cookies)
 
     # Make the screenshot of browser window:
