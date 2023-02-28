@@ -1,14 +1,14 @@
-from xml.dom.minidom import Element
-from selenium import webdriver
-from selenium.common import ElementNotVisibleException, ElementNotSelectableException
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-# from selenium.webdriver.support.r
+
 from time import sleep
 
-driver = webdriver.Chrome(executable_path=r"/Users/vasiliykirnos/skillfactory/selenium_example/chromedriver")
+from selenium import webdriver
+from selenium.common import ElementNotVisibleException, ElementNotSelectableException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
+driver = webdriver.Chrome(executable_path=r"/Users/User/PycharmProjects/PythonProject/drivers/Chrome/chromedriver.exe")
 driver.get("https://www.tutu.ru/")
 sleep(5)
 
@@ -56,3 +56,5 @@ date_from.send_keys(Keys.RETURN)
 sleep(10)
 # assert "No results found." not in driver.page_source
 driver.close()
+#
+# python -m pytest -v ex_3.py

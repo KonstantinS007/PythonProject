@@ -131,3 +131,11 @@
 #
 #
 # age_passed("Роман")
+
+
+def test_twice(str):
+    print("Этот вызов возвращает строку {0}".format(str))
+    return "Done"
+
+
+print(test_twice.__name__)
