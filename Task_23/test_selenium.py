@@ -9,7 +9,7 @@ def test_show_my_pets(selenium_driver):
        2. Проверяем, что присутствуют все питомцы.  '''
     
     driver = selenium_driver
-
+    # driver.get("https://petfriends.skillfactory.ru/login")
     # Нажимаем на кнопку входа в пункт меню Мои питомцы
     driver.find_element(By.CSS_SELECTOR, "a.nav-link[href='/my_pets']").click()
     time.sleep(3)
