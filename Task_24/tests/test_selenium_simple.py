@@ -21,7 +21,7 @@ from selenium.webdriver.common.by import By
 
 def test_search_example(selenium):
     """ Search some phrase in google and make a screenshot of the page. """
-    selenium = webdriver.Chrome(executable_path=r"/Users/User/PycharmProjects/PythonProject/drivers/Chrome/chromedriver.exe")
+    # selenium = webdriver.Chrome(executable_path=r"/Users/User/PycharmProjects/PythonProject/drivers/Chrome/chromedriver.exe")
     # Open google search page:
     selenium.get('https://google.com')
 
