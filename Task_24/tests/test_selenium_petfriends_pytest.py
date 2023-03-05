@@ -84,7 +84,7 @@ def test_petfriends(web_browser):
    field_pass.send_keys("qwerty123")
 
    # click submit button
-   btn_submit = web_browser.find_element(By.XPATH, "//button[@type='submit']")
+   btn_submit = web_browser.find_element(By.XPATH, "a.nav-link[href='/my_pets']")
    btn_submit.click()
 
 
