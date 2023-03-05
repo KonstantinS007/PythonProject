@@ -39,5 +39,5 @@ assert int(pets_number1) == len(pets_count)
 
 
 with open('log.txt', 'a', encoding='utf8') as f:
-    f.write(f'{name_my_pets}, \n {names}, \n{setnames}, \n{set_pet_data}, \n{pets}, \n{pets_number}, \n{pets_number1}')
+    f.write(f'{name_my_pets}, \n {names}, \n{setnames}, \n{set_pet_data}, \n{pets}, \n{pets_number}, \n{pets_number1}, \n{pets_count}')
 pytest.driver.quit()
