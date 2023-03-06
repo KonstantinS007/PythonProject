@@ -19,7 +19,7 @@ def selenium_driver(request):
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
 
-    driver = selenium_webdriver.Chrome(executable_path=r"/Users/vasiliykirnos/skillfactory/qap_pytest/chromedriver",
+    driver = selenium_webdriver.Chrome(executable_path=r"chromedriver",
                                        options=chrome_options)
     driver.set_window_size(1920, 1080)
     driver.maximize_window()
