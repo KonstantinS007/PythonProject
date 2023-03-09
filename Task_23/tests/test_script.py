@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-# pytest test_script.py
+# pytest test_auth_page.py
 
 
 class TestLoginStellarBurgers:
