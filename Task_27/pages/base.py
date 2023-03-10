@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- encoding=utf8 -*-
-
+import json
 import time
 from termcolor import colored
 
@@ -187,3 +187,17 @@ class WebPage(object):
 
         # Go up:
         self._web_driver.execute_script('window.scrollTo(document.body.scrollHeight, 0);')
+
+    def wait_for_animation(web_browser, selector):
+        """
+        Waits until jQuery animations have finished for the given jQuery  selector.
+        """
+        WebDriverWait(web_browser, 10).until(lambda web_browser: web_browser.execute_script(
+            'return jQuery(%s).is(":animated")' % json.dumps(selector))
+                                                                 == False)
+
+        def wait_for_ajax_loading(web_browser, class_name):
+            """
+            Waits until the ajax loading indicator disappears.
+            """
+            WebDriverWait(web_browser, 10).until(lambda web_browser: len(web_browser.find_elements_by_class_name(class_name)) == 0)
