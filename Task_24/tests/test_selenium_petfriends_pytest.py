@@ -84,10 +84,12 @@ def test_petfriends(web_browser):
    field_pass.send_keys("qwerty123")
 
    # click submit button
-   btn_submit = web_browser.find_element(By.XPATH, "a.nav-link[href='/my_pets']")
+   btn_submit = web_browser.find_element(By.CSS_SELECTOR, 'button[type="submit"]')
    btn_submit.click()
-
+   #  By.XPATH, "a.nav-link[href='/my_pets']"
 
    time.sleep(5)  # just for demo purposes, do NOT repeat it on real projects!
 
    assert  web_browser.current_url == 'https://petfriends.skillfactory.ru/all_pets',"login error"
+   with open('../../Task_27/my_cookies.txt', 'wb') as cookies:
+      pickle.dump(web_browser.get_cookies(), cookies)

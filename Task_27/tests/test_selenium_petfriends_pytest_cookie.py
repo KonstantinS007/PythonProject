@@ -17,7 +17,7 @@
 #  export SELENIUM_HOST=<moon host>
 #  export SELENIUM_PORT=4444
 #  pytest -v --driver Remote --capability browserName chrome tests/*
-#  python -m pytest -v --driver Chrome --driver-path /chromedriver.exe tests
+#  python -m pytest -v --driver Chrome --driver-path chromedriver.exe test_selenium_petfriends_pytest_cookie.py tests
 
 #import time, pickle
 import pytest
@@ -32,7 +32,7 @@ def test_petfriends(web_browser):
 
     # Scroll down till the end using actionchains and click on the last image
     page.scroll_down()
-
+    page._web_driver.implicitly_wait(10)
     # Make the screenshot of browser window:
     page._web_driver.save_screenshot('petfriends.png')
 

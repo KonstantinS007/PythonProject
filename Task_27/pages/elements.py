@@ -59,19 +59,19 @@ class WebElement(object):
     def is_clickable(self):
         """ Check is element ready for click or not. """
 
-        element = self.wait_to_be_clickable(timeout=0.1)
+        element = self.wait_to_be_clickable(timeout=1)
         return element is not None
 
     def is_presented(self):
         """ Check that element is presented on the page. """
 
-        element = self.find(timeout=0.1)
+        element = self.find(timeout=1)
         return element is not None
 
     def is_visible(self):
         """ Check is the element visible or not. """
 
-        element = self.find(timeout=0.1)
+        element = self.find(timeout=1)
 
         if element:
             return element.is_displayed()
