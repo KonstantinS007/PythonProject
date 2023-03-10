@@ -14,10 +14,10 @@ class MainPage(WebPage):
         if not url:
             url = os.getenv("MAIN_URL") or 'https://petfriends.skillfactory.ru/'
         super().__init__(web_driver, url)
-        with open('../my_cookies.txt' or 'my_cookies.txt', 'rb') as cookiesfile:
+        with open('C:/Users/User/PycharmProjects/my_cookies.txt', 'rb') as cookiesfile:
           cookies = pickle.load(cookiesfile)
         for cookie in cookies:
-            web_driver.add_cookie(cookie)
+            web_driver.add_cookie(cookie);
         # for cookie in pickle.load(open('Task_27/my_cookies.txt', 'rb')):
         #     web_driver.add_cookie(cookie)
         web_driver.refresh()
