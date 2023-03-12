@@ -2,7 +2,7 @@
 # Contest.py
 
 
-# test_pets.py
+# pytest test_pets.py
 from selenium.webdriver.common.by import By
 
 BASE_URL = "https://petfriends.skillfactory.ru"
@@ -14,6 +14,7 @@ def test_show_my_pets(selenium_driver):
     assert driver.current_url == BASE_URL + '/my_pets'
 
     pets_number = driver.find_element(By.XPATH, '//div[@class=".col-sm-4 left"]').text.split('\n')[1].split(": ")[1]
-    pets_number = '100500'
+    # pets_number = '100500'
     pets_count = driver.find_elements(By.XPATH, '//table[@class="table table-hover"]/tbody/tr')
+
     assert int(pets_number) == len(pets_count)

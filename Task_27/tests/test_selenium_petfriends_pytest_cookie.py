@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- encoding=utf8 -*-
-
+from selenium.webdriver.common.by import By
 # You can find very simple example of the usage Selenium with PyTest in this file.
 #
 # More info about pytest-selenium:
@@ -21,12 +21,8 @@
 #  python -m pytest -v --driver Chrome --driver-path chromedriver.exe tests
 
 
-#import time, pickle
-import pytest
 import time
 from Task_27.pages.petfriends import MainPage
-from Task_27.pages.elements import ManyWebElements
-from selenium.webdriver.common.action_chains import ActionChains
 
 
 def test_petfriends(web_browser):
@@ -36,14 +32,16 @@ def test_petfriends(web_browser):
 
     # Scroll down till the end using actionchains and click on the last image
     # page.scroll_down()
+    page._web_driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(10)
     # Make the screenshot of browser window:
     page._web_driver.save_screenshot('petfriends.png')
 
-def open_page(web_browser, url):
+
+def test_popen_page(web_browser):
     """ This is advanced function which also checks that all images completely loaded. """
 
-    web_browser.get(url)
+    MainPage(web_browser)
 
     page_loaded = False
     images_loaded = False
@@ -61,7 +59,7 @@ def open_page(web_browser, url):
 
         # Make sure that every image loaded completely
         # (sometimes we have to scroll to the image to push browser upload it):
-        pictures = web_browser.find_elements_by_xpath('//img')
+        pictures = web_browser.find_elements(By.XPATH, "//img")
         res = []
 
         for image in pictures:

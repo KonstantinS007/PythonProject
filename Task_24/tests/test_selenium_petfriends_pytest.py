@@ -91,5 +91,5 @@ def test_petfriends(web_browser):
    time.sleep(5)  # just for demo purposes, do NOT repeat it on real projects!
 
    assert  web_browser.current_url == 'https://petfriends.skillfactory.ru/all_pets',"login error"
-   with open('../../Task_27/my_cookies.txt', 'wb') as cookies:
+   with open('../my_cookies.txt', 'wb') as cookies:
       pickle.dump(web_browser.get_cookies(), cookies)
