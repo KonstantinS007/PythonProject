@@ -10,7 +10,6 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class WebPage(object):
-
     _web_driver = None
 
     def __init__(self, web_driver, url=''):
@@ -193,11 +192,11 @@ class WebPage(object):
         Waits until jQuery animations have finished for the given jQuery  selector.
         """
         WebDriverWait(web_browser, 10).until(lambda web_browser: web_browser.execute_script(
-            'return jQuery(%s).is(":animated")' % json.dumps(selector))
-                                                                 == False)
+            'return jQuery(%s).is(":animated")' % json.dumps(selector)) == False)
 
         def wait_for_ajax_loading(web_browser, class_name):
             """
             Waits until the ajax loading indicator disappears.
             """
-            WebDriverWait(web_browser, 10).until(lambda web_browser: len(web_browser.find_elements_by_class_name(class_name)) == 0)
+            WebDriverWait(web_browser, 10).until(
+                lambda web_browser: len(web_browser.find_elements_by_class_name(class_name)) == 0)
