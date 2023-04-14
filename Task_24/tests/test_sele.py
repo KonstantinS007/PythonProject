@@ -16,6 +16,7 @@ def testing():
 
     pytest.driver.quit()
 
+
 def test_show_my_pets():
     # Вводим email
     field_email = pytest.driver.find_element(By.ID, "email")

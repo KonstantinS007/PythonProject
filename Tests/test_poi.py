@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
 import pytest
 
+
 class HomePage:
     def __init__(self, driver):
         self.driver = driver
@@ -38,8 +39,9 @@ def selenium_driver():
 
     driver.quit()
 
+
 def test_search_for_destination(selenium_driver):
     selenium_driver.get("https://travelata.ru")
     home_page = HomePage(selenium_driver)
-    home_page.search_for_destination("Самара")
+    home_page.search_for_destination("пїЅпїЅпїЅпїЅпїЅпїЅ")
     sleep(10)

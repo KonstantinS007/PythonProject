@@ -46,21 +46,21 @@
 # # [3, 4, 6, 7]
 # L = ['3.3', '4.4', '5.5', '6.6']
 #
-# print (list (map ( float, L)))
-# string = input("Введите числа через пробел:")
+# print(list(map(float, L)))
+# string = input("Введите числа через пробел:1 1 2 3 5 8 13 21 34 55")
 #
 # list_of_strings = string.split() # список строковых представлений чисел
 # print(list_of_strings) # вывод списка чисел
 # list_of_numbers = list(map(int, list_of_strings)) # список чисел
 # list_of_numbers[0], list_of_numbers[-1] = list_of_numbers[-1], list_of_numbers[0]
-# print(list_of_numbers)
+# # print(sum(list_of_numbers[::3]))
 # list_sum = sum(list_of_numbers)
 # list_of_numbers.append(list_sum)
 # print(list_of_numbers)
-# 1 1 2 3 5 8 13 21 34 55
-# все операции - деление строки по пробелам, преобразование к числам
-# и приведение объекта map к типу список, можно делать в одной строке
-# L = list(map(int, input().split()))
+# # 1 1 2 3 5 8 13 21 34 55
+# # все операции - деление строки по пробелам, преобразование к числам
+# # и приведение объекта map к типу список, можно делать в одной строке
+# L = list(map(float, input("Введите :").split()))
 #
 # # обмениваем первое и последнее число
 # # с помощью множественного присваивания
@@ -694,7 +694,7 @@
 #     else:
 #          break
 #
-n = 3
+# n = 3
 
 # def print_ladder(n):
 #     for i in range(1,n+1):
@@ -1347,5 +1347,5 @@ n = 3
 # i = deposit.index(max(deposit))
 # print(deposit[i])
 
-n = {'wer': 'we', 'cc': 'ee'}
-print(type(n))
+# n = {'wer': 'we', 'cc': 'ee'}
+# print(type(n))
