@@ -13,7 +13,8 @@
 #     pip install -r requirements.txt
 #  3) Run tests:
 #     python3 -m pytest -v --driver Chrome --driver-path /tests/chrome test_selenium_simple.py
-#   python -m pytest -v --driver Chrome --driver-path Task_24/chromedriver.exe  test_selenium_simple.py
+#python -m pytest -v --driver Chrome --driver-path Task_24/chromedriver.exe  test_selenium_simple.py
+
 #   python -m pytest -v --driver Chrome  test_selenium_simple.py
 from selenium import webdriver
 import time

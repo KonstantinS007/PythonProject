@@ -11,6 +11,7 @@ def test_show_my_pets(selenium_driver):
     driver = selenium_driver
     # driver.get("https://petfriends.skillfactory.ru/login")
     # Нажимаем на кнопку входа в пункт меню Мои питомцы
+    locator0 = ('css_selector', "a.nav-link[href='/my_pets']")
     driver.find_element(By.CSS_SELECTOR, "a.nav-link[href='/my_pets']").click()
     time.sleep(3)
     # Проверяем, что оказались на странице питомцев пользователя
@@ -19,8 +20,10 @@ def test_show_my_pets(selenium_driver):
     # 1. Проверяем, что присутствуют все питомцы, для этого:
     # находим кол-во питомцев по статистике пользователя и проверяем, что их число
     # соответствует кол-ву питомцев в таблице
-    pets_number = driver.find_element(By.XPATH, '//div[@class=".col-sm-4 left"]').text.split('\n')[1].split(': ')[1]
+    locator1 = ('xpath', '//div[@class=".col-sm-4 left"]')
+    pets_number = driver.find_element(*locator1).text.split('\n')[1].split(': ')[1]
     # pets_count = 100
-    pets_count = driver.find_elements(By.XPATH, '//table[@class="table table-hover"]/tbody/tr')
+    locator2 = ('xpath', '//table[@class="table table-hover"]/tbody/tr')
+    pets_count = driver.find_elements(*locator2)
     assert int(pets_number) == len(pets_count)
     

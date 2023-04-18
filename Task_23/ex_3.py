@@ -1,4 +1,4 @@
-
+from selenium.webdriver.chrome.service import Service
 from time import sleep
 
 from selenium import webdriver
@@ -8,16 +8,17 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-driver = webdriver.Chrome(executable_path=r"/Users/User/PycharmProjects/PythonProject/drivers/Chrome/chromedriver.exe")
+s = Service("chromedriver.exe")
+driver = webdriver.Chrome(service=s)
 driver.get("https://www.tutu.ru/")
 sleep(5)
-
-origin = driver.find_element(By.CSS_SELECTOR, "*[name=\"city_from\"]")
+locator = ('css selector', "#wrapper > div.l-screen-top.j-top-screen.s-tab-avia > div.l-search_forms > div > div.j-search_form.j-avia_search_form.search_form.tab_active > div > div.inputs_line.j-row.j-main.j-last_row > div.input_wrp.j-city_container.j-city_container_from > div.b-input__form__standart.m-avia_form.j-input_wrapper > input")
+origin = driver.find_element(*locator) # By.CSS_SELECTOR, "#wrapper > div.l-screen-top.j-top-screen.s-tab-avia > div.l-search_forms > div > div.j-search_form.j-avia_search_form.search_form.tab_active > div > div.inputs_line.j-row.j-main.j-last_row > div.input_wrp.j-city_container.j-city_container_from > div.b-input__form__standart.m-avia_form.j-input_wrapper > input"
 origin.clear()
 origin.send_keys("Москва")
-
+locator1 = ('xpath', "//*[text()='Москва (Россия)']")
 WebDriverWait(driver, timeout=10).until(
-    EC.visibility_of_element_located((By.XPATH, "//*[text()='Москва (Россия)']"))
+    EC.visibility_of_element_located(locator1) #  (By.XPATH, "//*[text()='Москва (Россия)']")
 )
 
 origin_choice = driver.find_element(By.XPATH, "//*[text()='Москва (Россия)']")
