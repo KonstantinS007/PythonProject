@@ -28,7 +28,8 @@ def test_show_my_pets():
    #
    time.sleep(3)
    assert pytest.driver.find_element(By.TAG_NAME, 'h1').text == "PetFriends"
-
+   pytest.driver.find_element(By.CLASS_NAME, 'nav-link').click()
+   time.sleep(3)
    images = pytest.driver.find_elements(By.CSS_SELECTOR, '.card-deck .card-img-top')
    names = pytest.driver.find_elements(By.CSS_SELECTOR, '.card-deck .card-title')
    descriptions = pytest.driver.find_elements(By.CSS_SELECTOR, '.card-deck .card-text')
