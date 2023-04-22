@@ -3,12 +3,12 @@ from selenium import webdriver as selenium_webdriver
 from selenium.webdriver.common.by import By
 import time
 
-def test_show_my_pets(selenium_driver):
+def test_show_my_pets(selenium):  # _driver
     ''' Тест на проверку списка питомцев:
        1. Проверяем, что оказались на странице питомцев пользователя.
        2. Проверяем, что присутствуют все питомцы.  '''
     
-    driver = selenium_driver
+    driver = selenium
     # driver.get("https://petfriends.skillfactory.ru/login")
     # Нажимаем на кнопку входа в пункт меню Мои питомцы
     locator0 = ('css_selector', "a.nav-link[href='/my_pets']")
