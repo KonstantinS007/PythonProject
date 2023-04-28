@@ -153,14 +153,52 @@
 #
 # print(non_debtors)
 # # {'Васильев', 'Иванов'}
-# a = input("Введите первую строку: ")
-# b = input("Введите вторую строку: ")
+a = '1 2 3 4 5 6 7 8'  # input("Введите первую строку: ")
+b = '2 4 6 8 10 12'  # input("Введите вторую строку: ")
+print(type(a))
+print(b)
+a = a.split(' ')
+b = b.split(' ')
+
+print(b)
+a_set = set(a)  # используем множественное присваивание
+b_set = set(b)
+print(a_set)
+print(b_set)
+
+a_and_b = a_set.symmetric_difference(b_set)
+print(a_and_b)
+print(type(a_and_b))
+
+a_and_b = str(sorted(map(int, list(a_and_b))))
+
+a_and_b = a_and_b.replace(',', "")
+print(a_and_b)
+print(type(a_and_b))
+
+# my_list = [3]
 #
-# a_set, b_set = set(a), set(b) # используем множественное присваивание
-#
-# a_and_b = a_set.symmetric_difference(b_set)
-#
-# print(a_and_b)
+# my_set_1 = set('1, 2, 3')
+# my_set_2 = set('2, 3, 4')
+# my_set_3 = set(my_list)
+# print(my_set_1)
+# print(my_set_2)
+# print(my_set_3)
+# a = my_set_1.symmetric_difference(my_set_2)  # {1, 4}
+#  # {1, 4}
+# print(a)
+# a = my_set_1.symmetric_difference(my_list)  # {1, 2}
+#   # TypeError
+# print(a)
+
+
+
+
+
+
+
+
+
 # L = ['a', 'b', 'c']
 # print(id(L))
 #

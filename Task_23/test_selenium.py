@@ -2,6 +2,8 @@ import pytest
 from selenium import webdriver as selenium_webdriver
 from selenium.webdriver.common.by import By
 import time
+#  pytest -v --driver Chrome --driver-path chromedriver.exe test_selenium.py
+
 
 def test_show_my_pets(selenium):  # _driver
     ''' Тест на проверку списка питомцев:
@@ -9,7 +11,7 @@ def test_show_my_pets(selenium):  # _driver
        2. Проверяем, что присутствуют все питомцы.  '''
     
     driver = selenium
-    # driver.get("https://petfriends.skillfactory.ru/login")
+    driver.get("https://petfriends.skillfactory.ru/login")
     # Нажимаем на кнопку входа в пункт меню Мои питомцы
     locator0 = ('css_selector', "a.nav-link[href='/my_pets']")
     driver.find_element(By.CSS_SELECTOR, "a.nav-link[href='/my_pets']").click()

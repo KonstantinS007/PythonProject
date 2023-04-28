@@ -11,6 +11,6 @@ def test_auth_page(selenium):
     page.enter_pass("qwerty123")
     page.btn_click()
 
-    #���� != ��� == ����� �������� �� ����, ������ ��� �������� ������ �� ������
+    #
     assert page.get_relative_link() == '/all_pets', "login error"
 

@@ -29,7 +29,7 @@ class HomePage:
 
 @pytest.fixture(scope="session")
 def selenium_driver():
-    s = Service(r"/Users/vasiliykirnos/skillfactory/qap_pytest/chromedriver")
+    s = Service(r"/chromedriver")
     chrome_options = Options()
     driver = selenium_wd.Chrome(service=s, options=chrome_options)
     driver.maximize_window()
@@ -43,5 +43,5 @@ def selenium_driver():
 def test_search_for_destination(selenium_driver):
     selenium_driver.get("https://travelata.ru")
     home_page = HomePage(selenium_driver)
-    home_page.search_for_destination("������")
+    home_page.search_for_destination("London")
     sleep(10)

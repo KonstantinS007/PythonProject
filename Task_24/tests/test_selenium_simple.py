@@ -14,8 +14,9 @@
 #  3) Run tests:
 #     python3 -m pytest -v --driver Chrome --driver-path /tests/chrome test_selenium_simple.py
 #python -m pytest -v --driver Chrome --driver-path Task_24/chromedriver.exe  test_selenium_simple.py
-
-#   python -m pytest -v --driver Chrome  test_selenium_simple.py
+#  pytest -v --driver Chrome --driver-path pages/chromedriver.exe tests/test_auth_page.py > myoutput.txt
+#python -m pytest -v --driver Chrome --driver-path chromdriver.exe tests/test_selenium_simple.py
+#   python -m pytest -v --driver Chrome --driver-path chromedriver.exe tests/test_selenium_simple.py > myoutput.txt
 from selenium import webdriver
 import time
 from selenium.webdriver.common.by import By
